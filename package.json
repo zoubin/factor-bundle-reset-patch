@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/zoubin/factor-bundle-reset-patch#readme",
   "dependencies": {
-    "factor-bundle": "^2.4.1",
+    "factor-bundle": "2.4.1",
     "util-mix": "^1.2.2"
   },
   "devDependencies": {
