@@ -1,7 +1,7 @@
 # factor-bundle-reset-patch
 Patch for [factor-bundle@2.4.1](https://www.npmjs.com/package/factor-bundle) to work with [watchify](https://www.npmjs.com/package/watchify).
 
-There is a problem to use `2.4.1` with watchify: output streams are `finish`ed each time `bundle`ed and thus not writable anymore, so you will run into errors when `watchify` fires `update` to re`bundle`.
+There is a problem to use `2.4.1` with watchify: output streams are `finish`ed after `bundle` and thus not writable anymore, so you will run into errors when `watchify` fires `update` to re`bundle`.
 
 To solve this problem, output streams are rebuilt every time `reset`.
 
