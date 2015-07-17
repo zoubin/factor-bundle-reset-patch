@@ -138,3 +138,10 @@ Default: [browser-pack](https://npmjs.org/package/browser-pack)
 #### theshold
 
 Same with that in [factor-bundle](https://github.com/substack/factor-bundle#var-fr--factorfiles-opts).
+
+## events
+
+### b.on('factor.pipelines', function(files, pipelines, outputStreams){})
+
+Emits all absolute entry files, [pipeline](https://github.com/substack/factor-bundle#bonfactorpipeline-function-file-pipeline-)s, and output streams.
+
