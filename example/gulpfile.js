@@ -1,22 +1,10 @@
-# factor-bundle-reset-patch
-Patch for [factor-bundle@2.4.1](https://www.npmjs.com/package/factor-bundle) to work with [watchify](https://www.npmjs.com/package/watchify).
-
-The biggest problem for `2.4.1` is that output streams are `finish`ed each time `bundle`ed and thus not writable anymore, so you will run into errors when `watchify` fires `update` to re`bundle`.
-
-To solve this problem, output streams are rebuilt every time `reset`.
-
-## Example
-
-`example/gulpfile.js`
-
-```javascript
 var path = require('path');
 var gulp = require('gulp');
 var uglify = require('gulp-uglify');
 var buffer = require('gulp-buffer');
 var gutil = require('gulp-util');
 
-var factor = require('factor-bundle-reset-patch');
+var factor = require('..');
 var browserify = require('browserify');
 var watchify = require('watchify');
 
@@ -82,59 +70,3 @@ function getBundle() {
     };
     return b;
 }
-```
-
-```
-⌘ tree example/
-example/
-├── dist
-│   ├── a.js
-│   ├── b.js
-│   └── common.js
-├── gulpfile.js
-└── src
-    ├── a.js
-    ├── b.js
-    └── c.js
-```
-
-## b.plugin(factor, opts)
-
-### opts
-
-#### entries
-
-Type: `Array`
-
-Entry file paths. Absolute or relative to `opts.basedir`
-
-#### basedir
-
-Type: `String`
-
-#### outputs
-
-Type: `Array`, `String`
-
-Output destinations. Passed to `opts.createWriteStream` to make output streams.
-
-Type: `Function`
-
-It receives `opts.entries, opts.basedir`, and should return output streams.
-
-#### createWriteStream
-
-Type: `Function`
-
-Default: `fs.createWriteStream`
-
-#### pack
-
-Type: `Function`, `browser-plugin`
-
-Default: [browser-pack](https://npmjs.org/package/browser-pack)
-
-
-#### theshold
-
-Same with that in [factor-bundle](https://github.com/substack/factor-bundle#var-fr--factorfiles-opts).

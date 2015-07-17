@@ -1,0 +1,44 @@
+{
+  "name": "factor-bundle-reset-patch",
+  "version": "1.0.0",
+  "description": "Patch for factor-bundle to work with watchify",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape test/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zoubin/factor-bundle-reset-patch.git"
+  },
+  "keywords": [
+    "factor-bundle",
+    "watchify",
+    "browserify",
+    "browserify-plugin"
+  ],
+  "author": "zoubin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zoubin/factor-bundle-reset-patch/issues"
+  },
+  "homepage": "https://github.com/zoubin/factor-bundle-reset-patch#readme",
+  "dependencies": {
+    "factor-bundle": "^2.4.1",
+    "util-mix": "^1.2.2"
+  },
+  "devDependencies": {
+    "browserify": "^10.2.6",
+    "del": "^1.2.0",
+    "gulp": "^3.9.0",
+    "gulp-buffer": "0.0.2",
+    "gulp-uglify": "^1.2.0",
+    "gulp-util": "^3.0.6",
+    "merge-stream": "^0.1.8",
+    "mkdirp": "^0.5.1",
+    "read-only-stream": "^1.1.1",
+    "sink-transform": "^0.1.4",
+    "tape": "^4.0.0",
+    "vinyl-source-stream": "^1.1.0",
+    "watchify": "^3.2.3"
+  }
+}
